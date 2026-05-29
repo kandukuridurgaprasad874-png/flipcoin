@@ -1,0 +1,18 @@
+class Cab:
+    def __init__(self, customer, distance):
+        self.customer = customer
+        self.distance = distance
+
+class PremiumRide(Cab):
+    def calculate_fare(self):
+        base_fare = self.distance * 20
+        surge = base_fare * 0.20
+        waiting_charge = 50
+        discount = 30
+
+        total = base_fare + surge + waiting_charge - discount
+        print("Customer:", self.customer)
+        print("Total Fare:", total)
+
+ride = PremiumRide("Durga", 10)
+ride.calculate_fare()
